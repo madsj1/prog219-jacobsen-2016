@@ -1,15 +1,6 @@
-/**
- * Created by charlie on 10/7/15.
- */
-
-describe('Elvenware Simple Plain Suite', function() {
-
-    'use strict';
-
-    it('expects true to be true', function() {
-        expect(true).toBe(true);
-    });
-
+beforeEach(function() {
+        jasmine.getFixtures().fixturesPath = 'base/spec/fixtures/';
+        loadFixtures('marie.html');
 });
 
 describe('Elvenware Simple Plain Suite', function() {
@@ -40,8 +31,7 @@ describe('Elvenware Simple Plain Suite', function() {
     it('expects true to be true', function() {
         expect(true).toBe(true);
     });
-});
-
+    
 it('tests scope variable access in template loaded through raw text', function() {
         $templateCache.put('marie',
                 '<div id="marie">' +
@@ -55,12 +45,6 @@ it('tests scope variable access in template loaded through raw text', function()
 
         // Check that the compiled element contains the templated content
         expect(element.text()).toContain('Paris');
-});
-
-// Load marie.html so we can test against it
-beforeEach(function() {
-        jasmine.getFixtures().fixturesPath = 'base/spec/fixtures/';
-        loadFixtures('marie.html');
 });
 
 it('should be possible to access the marie fixture', function() {
@@ -78,3 +62,11 @@ it('tests scope variable access in template loaded through fixture', function() 
         // Check that the compiled element contains the templated content
         expect(element.text()).toContain('Paris');
 });
+
+});
+
+
+
+// Load marie.html so we can test against it
+
+
