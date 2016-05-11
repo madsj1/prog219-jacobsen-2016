@@ -32,7 +32,7 @@ describe('Elvenware Simple Plain Suite', function() {
         expect(true).toBe(true);
     });
     
-it('tests scope variable access in template loaded through raw text', function() {
+    it('tests scope variable access in template loaded through raw text', function() {
         $templateCache.put('marie',
                 '<div id="marie">' +
                 '   <p><span class="caption">First</span>: {{marie.firstName}}</p>' +
@@ -45,15 +45,15 @@ it('tests scope variable access in template loaded through raw text', function()
 
         // Check that the compiled element contains the templated content
         expect(element.text()).toContain('Paris');
-});
+    });
 
-it('should be possible to access the marie fixture', function() {
+    it('should be possible to access the marie fixture', function() {
         var spanElement = document.getElementById('marie');
         expect(spanElement).toBeDefined();
         expect(spanElement.innerHTML).toContain('First');
-});
+    });
 
-it('tests scope variable access in template loaded through fixture', function() {
+    it('tests scope variable access in template loaded through fixture', function() {
         // Get element from fixture
         var el = document.getElementById('marie');
         $templateCache.put('marie', el);
@@ -61,12 +61,6 @@ it('tests scope variable access in template loaded through fixture', function() 
         scope.$digest();
         // Check that the compiled element contains the templated content
         expect(element.text()).toContain('Paris');
-});
+    });
 
 });
-
-
-
-// Load marie.html so we can test against it
-
-
