@@ -16,7 +16,7 @@ function RenewableUtils() {
     };
 
     this.getByIndex = function(index) {
-        return renewables[index]
+        return renewables[index];
     };
 
     this.getYears = function() {
