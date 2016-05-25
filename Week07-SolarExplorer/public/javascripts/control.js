@@ -31,4 +31,3 @@ elfApp.directive('elfMarie', function() {
         templateUrl: 'marie'
     };
 });
-

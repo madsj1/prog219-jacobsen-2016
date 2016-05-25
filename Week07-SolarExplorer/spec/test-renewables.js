@@ -17,7 +17,7 @@ describe('Renewables Suite', function() {
         });
     }));
 
-    beforeEach(function() {        
+    beforeEach(function() {
         var requestHandler = $httpBackend
             .when('GET', 'data/Renewable.json')
             .respond(renewables);

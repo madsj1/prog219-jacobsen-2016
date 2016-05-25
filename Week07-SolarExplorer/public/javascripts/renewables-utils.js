@@ -16,7 +16,7 @@ function RenewableUtils() {
     };
 
     this.getByIndex = function(index) {
-        return renewables[index]
+        return renewables[index];
     };
 
     this.getYears = function() {
@@ -26,34 +26,42 @@ function RenewableUtils() {
     };
 
     this.getSimpleFormat = function() {
-        var temp = []
+        var temp = [];
         for (var i = 0; i < renewables.length; i++) {
             var tempobj = {
                 "geo": parseFloat(renewables[i]["Geothermal (quadrillion Btu)"]),
                 "solar": parseFloat(renewables[i]["Solar (quadrillion Btu)"]),
                 "wind": parseFloat(renewables[i]["Wind power (quadrillion Btu)"])
-            }
+            };
             temp.push(tempobj);
         }
-        return temp
+        return temp;
 
         // YOU WRITE THE LASt TWO METHODS
-        
-        
-    }
-    
+
+
+    };
+
     this.getSimpleStringFormat = function() {
-        var temp = []
+        var temp = [];
         for (var i = 0; i < renewables.length; i++) {
             var tempobj = {
                 "geo": renewables[i]["Geothermal (quadrillion Btu)"],
                 "solar": renewables[i]["Solar (quadrillion Btu)"],
                 "wind": renewables[i]["Wind power (quadrillion Btu)"]
-            }
+            };
             temp.push(tempobj);
         }
-        return temp
-    }
+        return temp;
+    };
+    
+    this.getByYear = function(year) {
+        for (var i = 0; i < renewables.length; i++) {
+            if(renewables[i].Year == year){
+                return {index:i,renewable:renewables[i]};
+            }
+        }
+    };
 }
 
 elfApp.service('renewableUtils', RenewableUtils);
