@@ -79,6 +79,7 @@ describe('Renewable By Year Suite', function () {
 
     it('tests that we can get a renewable object by Year in our elfRenewableByYear directive', function () {
         var simpleFormatHtml = document.getElementById('renewableByYear');
+        console.log(simpleFormatHtml)
         $templateCache.put('renewable-by-year', simpleFormatHtml);
         var element = $compile('<elf-renewable-by-year></elf-renewable-by-year>')(scope);
         scope.$digest();

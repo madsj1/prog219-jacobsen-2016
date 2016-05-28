@@ -11,7 +11,10 @@ elfApp.controller('MainController', function($scope, $http, renewableUtils) {
                 $scope.renewable = res.data;
                 $scope.renewableUtils = renewableUtils;
                 $scope.simpleFormat = renewableUtils.getSimpleFormat();
-            });
+                
+            },function errorCallback(response) {
+            console.log('Error:', response.status, response.statusText);
+        });
     };
 
 

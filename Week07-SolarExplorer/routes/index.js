@@ -16,4 +16,11 @@ router.get('/:id', function(req, res, nest) {
     });
 });
 
+router.get('/renewables/:id', function(request, response, next) {
+    'use strict';
+    response.render('renewables/' + request.params.id, {
+        title: ' Angular Directive Calvert'
+    });
+});
+
 module.exports = router;
