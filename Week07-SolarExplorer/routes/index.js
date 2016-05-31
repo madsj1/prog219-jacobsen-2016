@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     'use strict';
     res.render('index', {
-        title: 'Week05-SolarExplorer-Jacobsen'
+        title: 'Week07-SolarExplorer-Jacobsen'
     });
 });
 
@@ -19,7 +19,7 @@ router.get('/:id', function(req, res, nest) {
 router.get('/renewables/:id', function(request, response, next) {
     'use strict';
     response.render('renewables/' + request.params.id, {
-        title: ' Angular Directive Calvert'
+        title: ' Angular Directive jacobsen'
     });
 });
 
