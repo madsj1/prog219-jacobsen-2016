@@ -1,25 +1,48 @@
 extends layout
 
 block content
-  nav.navbar-inverse.navbar-fixed-top
+    header.navbar.navbar-inverse.navbar-fixed-top.bs-docs-nav(role='banner')
+        .container
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.bs-navbar-collapse')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='.#/') Solar Explorer
+            nav.collapse.navbar-collapse.bs-navbar-collapse(role="navigation")
+                ul.nav.navbar-nav
+                    li.trigger-collapse(ng-class="{ active: isActive('/')}")
+                        a(ng-href='#/') Home
+                    li.collapse.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            | Renewables
+                            b.caret
+                        ul.dropdown-menu(role='menu')
+                          li.trigger-collapse(ng-class="{ active: isActive('/simple-format')}")
+                            a(ng-href='#/simple-format') Simple Format
+                          li.trigger-collapse(ng-class="{ active: isActive('/renewables-by-year')}")
+                            a(ng-href='#/renewables-by-year') renewable by year
+                          li.trigger-collapse(ng-class="{ active: isActive('/renewables-page')}")
+                            a(ng-href='#/renewables-page') renewables page
+                            // ADD TWO MORE MENU ITEMS HERE (ByYear, ByIndex)    
+                    li.collapse.dropdown
+                        a.dropdown-toggle(data-toggle='dropdown')
+                            | Energy
+                            b.caret
+                        ul.dropdown-menu(role='menu')
+                          li.trigger-collapse(ng-class="{ active: isActive('/energy-types')}")
+                            a(ng-href='#/energy-types') Energy Types
+                          li.trigger-collapse(ng-class="{ active: isActive('/energy-selector')}")
+                            a(ng-href='#/energy-selector') Energy selector
+                            // ADD THE ENERGY MENU ITEMS HERE.
+                            // BASE THEM ON THE RENEWABLES Menu item above
+                            // THEY SHOULD Energy Types AND Energy Selectors
+                    li.trigger-collapse(ng-class="{ active: isActive('/about')}")
+                        a(ng-href='#/about') About
     .container
-      navbar-header
-        ul.nav.nav-pills
-          li(ng-class="{ active: isActive('/home')}")
-            a(ng-href='#/home') Home
-          li(ng-class="{ active: isActive('/simple-format')}")
-            a(ng-href='#/simple-format') Simple Format
-          li(ng-class="{ active: isActive('/renewables-by-year')}")
-            a(ng-href='#/renewables-by-year') renewable by year
-          li(ng-class="{ active: isActive('/renewables-page')}")
-            a(ng-href='#/renewables-page') renewables page
-          li(ng-class="{ active: isActive('/about')}")
-            a(ng-href='#/about') About
-          li(ng-class="{ active: isActive('/energy-types')}")
-            a(ng-href='#/energy-types') Energy Types
-  .container
-    h1= title
-    p Welcome to #{title}
-  
-    div(data-ng-view="")        
-  
+        h1= title
+        p Welcome to #{title}
+        p Author #{author}
+
+        div(data-ng-view="")

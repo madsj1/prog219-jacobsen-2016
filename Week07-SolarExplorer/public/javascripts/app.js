@@ -23,6 +23,9 @@ myModule.config(function($routeProvider, $locationProvider) {
     }).when('/energy-types', {
         templateUrl: 'energy-types/energy-types-page',
         controller: 'EnergyTypesController'
+    }).when('/energy-selector', {
+        templateUrl: 'energy-types/energy-selector-page',
+        controller: 'EnergySelectorController'
     }).otherwise({
         redirectTo: '/'
     });

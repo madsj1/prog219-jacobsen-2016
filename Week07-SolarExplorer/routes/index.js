@@ -23,4 +23,11 @@ router.get('/renewables/:id', function(request, response, next) {
     });
 });
 
+router.get('/energy-types/:id', function(request, response, next) {
+    'use strict';
+    response.render('energy-types/' + request.params.id, {
+        title: ' Angular Directive jacobsen'
+    });
+});
+
 module.exports = router;

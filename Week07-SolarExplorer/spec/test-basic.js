@@ -49,7 +49,7 @@ describe('Elvenware Simple Plain Suite', function() {
             "Wood biomass (quadrillion Btu)": "1.9860924",
             "Hydropower (quadrillion Btu)": "2.5859957"
         }];
-        $templateCache.put("renewable",
+        $templateCache.put("renewables/renewable",
             '<div id="renewable">' +
             'First: {{renewable[index].Year}}' +
             '   <br/>Solar: {{renewable[index]["Solar (quadrillion Btu)"]}}' +
@@ -88,7 +88,7 @@ describe('Elvenware Simple Plain Suite', function() {
         }];
 
         var el = document.getElementById('renewable');
-        $templateCache.put('renewable', el);
+        $templateCache.put('renewables/renewable', el);
         var element = $compile('<elf-renewable></elf-renewable>')(scope);
         scope.$digest();
 

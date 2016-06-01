@@ -1,0 +1,15 @@
+.panel.panel-default
+    .panel-heading Choose type of MSN
+    .panel-body(ng-init="getEnergyTypes()")
+        select(ng-model="msn", ng-change="updatelist()")
+            option(ng-repeat="data in datatypes") {{data}}
+            
+.panel.panel-default
+    .panel-heading Choose file to look at
+    .panel-body          
+        input(type="number", data-ng-model="index", min="0")
+        elf-energy-selector
+        
+.panel.panel-default
+    .panel-body  
+        |Count {{energyTypes.length}}

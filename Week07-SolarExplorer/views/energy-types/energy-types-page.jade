@@ -3,13 +3,16 @@ h1 Energy Types
 
 .panel.panel-default
     .panel-heading Iterate over All Energy Types
-    .panel-body
+    .panel-body(ng-init="getEnergyTypes()")
         input(type="number", data-ng-model="index", min="0")
         br
-        energy-types
-    
-    .container
-    h1= title
-    p Welcome to #{title}
-  
-    div(data-ng-view="")
+        elf-energy-types
+        
+.panel.panel-default
+    .panel-heading All uniqes MSN
+    .panel-body
+        elf-energy-types-msn
+        
+.panel.panel-default
+    .panel-body
+        |record : {{energyTypes.length}}
