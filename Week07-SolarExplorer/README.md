@@ -1,7 +1,7 @@
 # Week04-AngularDirectiveTesting
 by Charlie Calvert
 
-## Week 05 Branch
+## Week 0 Branch
 
   - [Angular Solar Starter Assignment][solar-start]
 

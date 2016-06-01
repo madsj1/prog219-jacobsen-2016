@@ -22,6 +22,6 @@ elfApp.directive('elfSimpleFormat', function() {
     'use strict';
     return {
         controller: 'SimpleFormatController',
-        templateUrl: 'simple-format'
+        templateUrl: 'renewables/simple-format'
     };
 });

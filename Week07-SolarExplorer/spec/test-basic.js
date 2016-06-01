@@ -100,5 +100,4 @@ describe('Elvenware Simple Plain Suite', function() {
 });
 
 
-
 // Load renewable.html so we can test against it

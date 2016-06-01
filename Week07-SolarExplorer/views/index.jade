@@ -9,10 +9,14 @@ block content
             a(ng-href='#/home') Home
           li(ng-class="{ active: isActive('/simple-format')}")
             a(ng-href='#/simple-format') Simple Format
-          li(ng-class="{ active: isActive('/renewable-by-year')}")
-            a(ng-href='#/renewable-by-year') renewable by year
+          li(ng-class="{ active: isActive('/renewables-by-year')}")
+            a(ng-href='#/renewables-by-year') renewable by year
+          li(ng-class="{ active: isActive('/renewables-page')}")
+            a(ng-href='#/renewables-page') renewables page
           li(ng-class="{ active: isActive('/about')}")
             a(ng-href='#/about') About
+          li(ng-class="{ active: isActive('/energy-types')}")
+            a(ng-href='#/energy-types') Energy Types
   .container
     h1= title
     p Welcome to #{title}
