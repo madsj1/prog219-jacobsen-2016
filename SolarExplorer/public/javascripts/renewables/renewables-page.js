@@ -1,7 +1,8 @@
-var elfApp = angular.module("elfApp");
+var elfApp = angular.module('elfApp');
 
 elfApp.controller('MainController', function($scope, $http, renewableUtils) {
-    $scope.mainData = "Main Data";
+    'use strict';
+    $scope.mainData = 'Main Data';
     $scope.index = 0;
     $scope.getRenewable = function() {
         console.log('getRenewable');
@@ -11,12 +12,11 @@ elfApp.controller('MainController', function($scope, $http, renewableUtils) {
                 $scope.renewable = res.data;
                 $scope.renewableUtils = renewableUtils;
                 $scope.simpleFormat = renewableUtils.getSimpleFormat();
-                
-            },function errorCallback(response) {
-            console.log('Error:', response.status, response.statusText);
-        });
-    };
 
+            }, function errorCallback(response) {
+                console.log('Error:', response.status, response.statusText);
+            });
+    };
 
 });
 

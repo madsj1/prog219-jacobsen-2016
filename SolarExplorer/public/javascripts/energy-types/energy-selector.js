@@ -1,6 +1,7 @@
-var elfApp = angular.module("elfApp");
+var elfApp = angular.module('elfApp');
 
 elfApp.controller('EnergySelectorController', function($scope, $http, energyTypesUtils, msnTypes) {
+    'use strict';
     $scope.index = 0;
     $scope.getEnergyTypes = function() {
         $http.get('data/EnergyTypes.json')
@@ -17,14 +18,14 @@ elfApp.controller('EnergySelectorController', function($scope, $http, energyType
     $scope.combine = function(msn) {
         var temp = [];
         for (var i = 0; i < msn.length; i++) {
-            temp.push(msn[i].msn + ":" + msn[i].description);
+            temp.push(msn[i].msn + ':' + msn[i].description);
         }
         return temp;
-    }
-    
+    };
+
     $scope.updatelist = function() {
-        $scope.energyTypes = $scope.energyTypesUtils.getByMSN($scope.msn.split(":", 1));
-    }
+        $scope.energyTypes = $scope.energyTypesUtils.getByMSN($scope.msn.split(':', 1));
+    };
 
 });
 

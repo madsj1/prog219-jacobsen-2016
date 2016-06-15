@@ -1,9 +1,9 @@
-
-var elfApp = angular.module("elfApp");
+var elfApp = angular.module('elfApp');
 
 elfApp.controller('RenewableByYearController', function($scope, $http, renewableUtils) {
+    'use strict';
     $scope.index = 0;
-    $scope.userYearInput = 2006
+    $scope.userYearInput = 2006;
 
     $scope.getByYear = function(year) {
         var renewableData = $scope.renewableUtils.getByYear(year);
@@ -19,11 +19,10 @@ elfApp.controller('RenewableByYearController', function($scope, $http, renewable
                 $scope.renewable = res.data;
                 $scope.renewableUtils = renewableUtils;
                 $scope.simpleFormat = renewableUtils.getSimpleFormat();
-                $scope.getByYear($scope.userYearInput)
+                $scope.getByYear($scope.userYearInput);
             });
     };
 });
-
 
 elfApp.directive('elfRenewableByYear', function() {
     'use strict';

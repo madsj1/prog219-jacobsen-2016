@@ -5,18 +5,20 @@ var connect = {
     connected: false,
 
     simpleConnect: function() {
-        var url= 'mongodb://127.0.0.1:27017/renew';
+        'use strict';
+        var url = 'mongodb://127.0.0.1:27017/renew';
         connect.connected = true;
         mongoose.connect(url);
         var db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
         db.once('open', function(callback) {
-            connected = true;
+            connect.connected = true;
             console.log('Opened connection to mongo');
         });
     },
 
-    mlabConnect:function() {
+    mlabConnect: function() {
+        'use strict';
         connect.connected = true;
         var userName = 'csc';
         var password = 'Re*lD*t*22#';
@@ -30,12 +32,13 @@ var connect = {
         var db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error:'));
         db.once('open', function(callback) {
-            connected = true;
+            connect.connected = true;
             console.log('Opened connection to mongo');
         });
     },
 
     doConnection: function(useSimple) {
+        'use strict';
         var connectType = useSimple || true;
         if (connectType) {
             connect.simpleConnect();

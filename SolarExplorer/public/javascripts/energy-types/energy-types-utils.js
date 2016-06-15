@@ -19,16 +19,16 @@ function EnergyTypesUtils() {
         return this.data[index];
     };
 
-    this.getByMSN = function(msn){
+    this.getByMSN = function(msn) {
         var temp = [];
         for (var i = 0; i < this.data.length; i++) {
-            if(this.data[i].MSN==msn){
-                temp.push(this.data[i])
+            if (this.data[i].MSN == msn) {
+                temp.push(this.data[i]);
             }
         }
         return temp;
-        
-    }
+
+    };
 }
 
 elfApp.service('energyTypesUtils', EnergyTypesUtils);

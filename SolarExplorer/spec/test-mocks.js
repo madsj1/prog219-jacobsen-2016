@@ -11,7 +11,9 @@ describe('Elvenware Simple Plain Suite', function() {
 
     'use strict';
 
-    var $httpBackend, scope, mainController;
+    var $httpBackend;
+    var scope;
+    var mainController;
 
     // Set up the module
     beforeEach(module('elfApp'));
@@ -41,14 +43,14 @@ describe('Elvenware Simple Plain Suite', function() {
     it('proves we can mock getting JSON data', function() {
 
         var renewable = [{
-            "Year": "2017",
-            "Solar (quadrillion Btu)": "0.8045307",
-            "Geothermal (quadrillion Btu)": "0.2349284",
-            "Other biomass (quadrillion Btu)": "0.50916",
-            "Wind power (quadrillion Btu)": "2.202328",
-            "Liquid biofuels (quadrillion Btu)": "1.2329197",
-            "Wood biomass (quadrillion Btu)": "1.9860924",
-            "Hydropower (quadrillion Btu)": "2.5859957"
+            'Year': '2017',
+            'Solar (quadrillion Btu)': '0.8045307',
+            'Geothermal (quadrillion Btu)': '0.2349284',
+            'Other biomass (quadrillion Btu)': '0.50916',
+            'Wind power (quadrillion Btu)': '2.202328',
+            'Liquid biofuels (quadrillion Btu)': '1.2329197',
+            'Wood biomass (quadrillion Btu)': '1.9860924',
+            'Hydropower (quadrillion Btu)': '2.5859957'
         }];
 
         // Define what happens when $http.get() is called.

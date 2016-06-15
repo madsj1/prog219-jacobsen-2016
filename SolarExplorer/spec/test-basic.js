@@ -1,4 +1,4 @@
-describe('Elvenware Simple Plain Suite', function() {
+fdescribe('Elvenware Simple Plain Suite', function() {
 
     'use strict';
 
@@ -28,7 +28,6 @@ describe('Elvenware Simple Plain Suite', function() {
         loadFixtures('renewable.html');
     });
 
-
     it('should be possible to access the fixture', function() {
         var spanElement = document.getElementById('renewable');
         expect(spanElement).toBeDefined();
@@ -40,16 +39,16 @@ describe('Elvenware Simple Plain Suite', function() {
 
     it('tests scope variable access in template loaded through raw text', function() {
         scope.renewable = [{
-            "Year": "2017",
-            "Solar (quadrillion Btu)": "0.8045307",
-            "Geothermal (quadrillion Btu)": "0.2349284",
-            "Other biomass (quadrillion Btu)": "0.50916",
-            "Wind power (quadrillion Btu)": "2.202328",
-            "Liquid biofuels (quadrillion Btu)": "1.2329197",
-            "Wood biomass (quadrillion Btu)": "1.9860924",
-            "Hydropower (quadrillion Btu)": "2.5859957"
+            'Year': '2017',
+            'Solar (quadrillion Btu)': '0.8045307',
+            'Geothermal (quadrillion Btu)': '0.2349284',
+            'Other biomass (quadrillion Btu)': '0.50916',
+            'Wind power (quadrillion Btu)': '2.202328',
+            'Liquid biofuels (quadrillion Btu)': '1.2329197',
+            'Wood biomass (quadrillion Btu)': '1.9860924',
+            'Hydropower (quadrillion Btu)': '2.5859957'
         }];
-        $templateCache.put("renewables/renewable",
+        $templateCache.put('renewables/renewable',
             '<div id="renewable">' +
             'First: {{renewable[index].Year}}' +
             '   <br/>Solar: {{renewable[index]["Solar (quadrillion Btu)"]}}' +
@@ -77,14 +76,14 @@ describe('Elvenware Simple Plain Suite', function() {
     it('tests scope variable access in template loaded through fixture', function() {
         // Get element from fixture
         scope.renewable = [{
-            "Year": "2017",
-            "Solar (quadrillion Btu)": "0.8045307",
-            "Geothermal (quadrillion Btu)": "0.2349284",
-            "Other biomass (quadrillion Btu)": "0.50916",
-            "Wind power (quadrillion Btu)": "2.202328",
-            "Liquid biofuels (quadrillion Btu)": "1.2329197",
-            "Wood biomass (quadrillion Btu)": "1.9860924",
-            "Hydropower (quadrillion Btu)": "2.5859957"
+            'Year': '2017',
+            'Solar (quadrillion Btu)': '0.8045307',
+            'Geothermal (quadrillion Btu)': '0.2349284',
+            'Other biomass (quadrillion Btu)': '0.50916',
+            'Wind power (quadrillion Btu)': '2.202328',
+            'Liquid biofuels (quadrillion Btu)': '1.2329197',
+            'Wood biomass (quadrillion Btu)': '1.9860924',
+            'Hydropower (quadrillion Btu)': '2.5859957'
         }];
 
         var el = document.getElementById('renewable');
@@ -96,8 +95,5 @@ describe('Elvenware Simple Plain Suite', function() {
 
         // ETC. The rest of the code is nearly, but not exactly identical to the renewable code.
     });
-
+    // Load renewable.html so we can test against it
 });
-
-
-// Load renewable.html so we can test against it

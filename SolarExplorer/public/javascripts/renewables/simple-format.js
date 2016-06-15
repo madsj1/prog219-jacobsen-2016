@@ -1,7 +1,8 @@
-var elfApp = angular.module("elfApp");
+var elfApp = angular.module('elfApp');
 
 elfApp.controller('SimpleFormatController', function($scope, $http, renewableUtils) {
-    $scope.mainData = "Main Data";
+    'use strict';
+    $scope.mainData = 'Main Data';
     $scope.index = 0;
     $scope.getRenewable = function() {
         console.log('getRenewable');
@@ -11,10 +12,9 @@ elfApp.controller('SimpleFormatController', function($scope, $http, renewableUti
                 $scope.renewable = res.data;
                 $scope.renewableUtils = renewableUtils;
                 $scope.simpleFormat = renewableUtils.getSimpleFormat();
-                
+
             });
     };
-
 
 });
 

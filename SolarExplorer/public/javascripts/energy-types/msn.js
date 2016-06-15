@@ -1,9 +1,12 @@
 var elfApp = angular.module('elfApp');
 
-elfApp.factory('msnTypes', function () {
+elfApp.factory('msnTypes', function() {
     'use strict';
 
-    var currentMsn = {msn: null, description: ''};
+    var currentMsn = {
+        msn: null,
+        description: ''
+    };
     var msnTypes = [];
     var count = 0;
 
@@ -27,7 +30,7 @@ elfApp.factory('msnTypes', function () {
     }
 
     function iterateEnergyTypes(energyTypes) {
-        energyTypes.forEach(function (energyType, index) {
+        energyTypes.forEach(function(energyType, index) {
             count = count + 1;
             energyType.Year = energyType.YYYYMM.substr(0, 4);
             energyType.Month = energyType.YYYYMM.substr(4);

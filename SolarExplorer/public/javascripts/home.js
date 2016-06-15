@@ -1,4 +1,4 @@
-elfApp.controller('HomeController', function ($scope, $http) {
+elfApp.controller('HomeController', function($scope, $http) {
     'use strict';
 
     $scope.mainData = 'HomeController MainData';
@@ -12,8 +12,8 @@ elfApp.controller('HomeController', function ($scope, $http) {
     };
     $scope.text = 'hello';
 
-    $scope.submit = function () {
-        $http.post('/database/updateSettings', $scope.formData).then(function (result) {
+    $scope.submit = function() {
+        $http.post('/database/updateSettings', $scope.formData).then(function(result) {
             $scope.resultFull = JSON.stringify(result, null, 4);
             $scope.resultMirror = JSON.stringify(result.data.query, null, 4);
         }, function(err) {
@@ -23,7 +23,7 @@ elfApp.controller('HomeController', function ($scope, $http) {
     };
 
     function readSettings() {
-        $http.get('/database/getSettings').then(function (result) {
+        $http.get('/database/getSettings').then(function(result) {
             $scope.resultFull = JSON.stringify(result, null, 4);
             $scope.resultMirror = JSON.stringify(result.data.settings, null, 4);
             $scope.formData = {
